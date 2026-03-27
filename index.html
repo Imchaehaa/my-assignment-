@@ -4,96 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond the Screen | K-Cinema Report</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
+        /* 기본 설정 */
         :root {
-            --bg-dark: #050505; /* 아주 깊은 검은색 */
-            --cinema-red: #8B0000; /* 어두운 커튼 레드 */
-            --screen-glow: rgba(255, 255, 255, 0.05); /* 스크린 은은한 빛 */
-            --text-gray: #bbb;
+            --bg-black: #050505;
+            --cinema-red: #b30000;
+            --text-gray: #cccccc;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background-color: var(--bg-dark); 
-            color: #fff; 
-            font-family: 'Noto Sans KR', sans-serif; 
-            line-height: 1.8;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            background-color: var(--bg-black); 
+            color: #ffffff; 
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; 
+            line-height: 1.6;
         }
 
-        /* 내비게이션 바 - 영화 표지 느낌 */
+        /* 상단 바 */
         nav {
-            position: fixed; top: 0; width: 100%; height: 70px;
+            position: fixed; top: 0; width: 100%; height: 60px;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0 50px; background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 2px solid var(--cinema-red);
+            padding: 0 30px; background: rgba(0,0,0,0.9);
+            border-bottom: 2px solid var(--cinema-red); z-index: 1000;
         }
-        .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; color: var(--cinema-red); }
-        .nav-menu a { 
-            color: var(--text-gray); text-decoration: none; margin-left: 25px; 
-            font-size: 0.85rem; transition: 0.3s; font-weight: 500;
-        }
-        .nav-menu a:hover { color: #fff; text-shadow: 0 0 10px #fff; }
+        .nav-logo { font-weight: bold; color: var(--cinema-red); letter-spacing: 1px; }
+        .nav-menu a { color: var(--text-gray); text-decoration: none; margin-left: 15px; font-size: 0.85rem; }
 
-        /* 표지 (Hero Section) - 웅장한 영화관 스크린 */
+        /* 표지 (Hero) - 영화관 스크린 느낌 */
         .hero {
             height: 100vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            background: 
-                linear-gradient(to bottom, rgba(5,5,5,0.8), rgba(5,5,5,1)),
-                radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(5,5,5,1) 70%);
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
             padding: 0 20px;
-            position: relative;
-        }
-        
-        /* 영화관 커튼 느낌의 배경 효과 */
-        .hero::before, .hero::after {
-            content: ''; position: absolute; top: 0; width: 10vw; height: 100%;
-            background: linear-gradient(to right, #1a0000, #050505);
-            opacity: 0.5;
-        }
-        .hero::before { left: 0; }
-        .hero::after { right: 0; transform: scaleX(-1); }
-
-        .hero-tag { 
-            font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--cinema-red); 
-            letter-spacing: 2px; margin-bottom: 15px;
         }
         .hero h1 { 
-            font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; margin-bottom: 25px;
-            line-height: 1.1; text-shadow: 0 0 20px rgba(255,255,255,0.5);
-            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 3rem; margin-bottom: 20px; color: #fff;
+            text-shadow: 0 0 15px rgba(255,255,255,0.3);
         }
-        .hero p { color: #888; margin-bottom: 40px; max-width: 650px; font-weight: 300; }
-        
-        /* 영화 티켓 느낌의 버튼 */
+        .hero p { color: #888; margin-bottom: 30px; max-width: 600px; }
         .hero-btn {
-            padding: 18px 50px; background-color: var(--cinema-red);
+            padding: 15px 40px; background: var(--cinema-red);
             border: 2px solid #fff; color: #fff; font-weight: bold;
-            cursor: pointer; transition: 0.3s; text-decoration: none;
-            font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            text-decoration: none; transition: 0.3s;
         }
-        .hero-btn:hover { background-color: #fff; color: var(--cinema-red); box-shadow: 0 0 25px #fff; }
+        .hero-btn:hover { background: #fff; color: var(--cinema-red); }
 
-        /* 섹션 공통 스타일 - 스크린의 빛 */
-        section { 
-            padding: 120px 15vw; 
-            border-bottom: 1px solid #1a1a1a;
-            position: relative;
-        }
-        section::before {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 80%; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
-        }
+        /* 본문 섹션 */
+        section { padding: 80px 20px; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #222; }
+        h2 { color: var(--cinema-red); margin-bottom: 30px; border-left: 4px solid var(--cinema-red); padding-left: 15px; }
+        .card { background: #111; padding: 25px; border-radius: 10px; border: 1px solid #222; margin-bottom: 20px; }
+        h3 { margin-bottom: 10px; color: #eee; }
+        
+        footer { padding: 40px; text-align: center; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
 
-        h2 { 
-            font-size: 2.2rem; margin-bottom: 50px; color: #fff; text-align: center;
-            font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
-        }
+    <nav>
+        <div class="nav-logo">BEYOND THE SCREEN</div>
+        <div class="nav-menu">
+            <a href="#intro">01 인트로</a>
+            <a href="#history">02 역사</a>
+            <a href="#genre">03 장르</a>
+        </div>
+    </nav>
 
-        /* 콘텐츠 레이아웃 */
-        .grid
+    <div class="hero">
+        <p style="color:var(--cinema-red); font-weight:bold; letter-spacing:2px;">NOW SHOWING</p>
+        <h1>Beyond the Screen:<br>K-Culture의 세계화</h1>
+        <p>한국 영화와 드라마 산업의 글로벌 영향력 및 미래 전략 분석 보고서</p>
+        <div style="font-size:0.8rem; color:#555; margin-bottom:20px;">작성일: 2026. 03. 27 | 학번 이름</div>
+        <a href="#intro" class="hero-btn">리포트 입장하기</a>
+    </div>
+
+    <section id="intro">
+        <h2>01. THE K-WAVE IMPACT</h2>
+        <div class="card">
+            <h3>글로벌 시장 규모</h3>
+            <p>한국 콘텐츠 수출액은 <span style="color:var(--cinema-red); font-weight:bold;">$13.4B</span>를 돌파하며 전 세계적인 신드롬을 일으키고 있습니다.</p>
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>02. EVOLUTION</h2>
+        <div class="card">
+            <p>90년대 '사랑이 뭐길래'부터 2020년대 '오징어 게임'까지, 한국 콘텐츠는 끊임없이 진화하며 세계의 중심에 섰습니다.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>K-CULTURE REPORT ASSIGNMENT © 2026</p>
+    </footer>
+
+</body>
+</html>
