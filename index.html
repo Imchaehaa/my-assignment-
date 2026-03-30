@@ -10,9 +10,8 @@
   :root {
     --black: #050505;
     --deep: #0a0a0a;
-    --panel: #121212;
-    --card: #181818;
-    --border: rgba(229, 9, 20, 0.2);
+    --card: #141414;
+    --border: rgba(229, 9, 20, 0.3);
     --white: #ffffff;
     --red: #E50914;
     --muted: rgba(255, 255, 255, 0.5);
@@ -30,82 +29,89 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 500;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 3rem; height: 64px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-id { font-family: 'Bebas Neue', sans-serif; color: var(--red); font-size: 1.1rem; }
-  .nav-menu { display: flex; gap: 15px; list-style: none; }
-  .nav-menu a { color: var(--muted); text-decoration: none; font-size: 0.75rem; }
+  .nav-id { font-family: 'Bebas Neue'; color: var(--red); font-size: 1.1rem; letter-spacing: 1px; }
+  .nav-menu { display: flex; gap: 18px; list-style: none; }
+  .nav-menu a { color: var(--muted); text-decoration: none; font-size: 0.75rem; font-weight: 500; }
   .nav-menu a:hover { color: var(--red); }
 
   #hero {
     height: 100vh; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center;
-    background: radial-gradient(circle at center, #220507 0%, #050505 100%);
+    background: radial-gradient(circle at center, #2b0608 0%, #050505 100%);
     padding: 0 2rem;
   }
   .hero-badge {
     font-family: 'Bebas Neue'; color: var(--red); border: 1px solid var(--red);
-    padding: 0.5rem 1.5rem; margin-bottom: 1.5rem; letter-spacing: 2px;
+    padding: 0.5rem 1.5rem; margin-bottom: 1.5rem; letter-spacing: 3px;
   }
-  .hero-title { font-family: 'Bebas Neue'; font-size: clamp(3rem, 8vw, 7rem); line-height: 1; margin-bottom: 1rem; }
-  .hero-sub { font-family: 'Noto Serif KR'; font-size: 1.1rem; color: var(--muted); max-width: 700px; margin-bottom: 1rem; }
-  .hero-date { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+  .hero-title { font-family: 'Bebas Neue'; font-size: clamp(3.5rem, 9vw, 8rem); line-height: 0.9; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(229, 9, 20, 0.4); }
+  .hero-sub { font-family: 'Noto Serif KR'; font-size: 1.2rem; color: var(--muted); max-width: 750px; margin-bottom: 1.5rem; }
+  .hero-date { font-size: 0.85rem; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
 
-  section { padding: 100px 0; border-bottom: 1px solid #111; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-  .section-label { font-family: 'Bebas Neue'; color: var(--red); letter-spacing: 3px; margin-bottom: 1rem; }
-  .section-title { font-family: 'Bebas Neue'; font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem; }
+  section { padding: 120px 0; border-bottom: 1px solid #111; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .section-label { font-family: 'Bebas Neue'; color: var(--red); letter-spacing: 4px; margin-bottom: 1.2rem; font-size: 0.9rem; }
+  .section-title { font-family: 'Bebas Neue'; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 3rem; }
   .section-title em { font-style: normal; color: var(--red); }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-  .stat-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; border-radius: 4px; }
-  .stat-num { font-family: 'Bebas Neue'; font-size: 2.5rem; color: var(--red); margin-bottom: 0.5rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+  .stat-card { background: var(--card); border: 1px solid #222; padding: 2.5rem; border-radius: 2px; }
+  .stat-num { font-family: 'Bebas Neue'; font-size: 2.8rem; color: var(--red); margin-bottom: 0.6rem; }
   .stat-label { font-size: 0.85rem; color: var(--muted); }
 
-  .big-quote { border-left: 4px solid var(--red); padding: 2rem; background: var(--card); margin: 3rem 0; font-family: 'Noto Serif KR'; font-size: 1.1rem; color: #eee; }
-  .big-quote cite { display: block; margin-top: 1rem; font-size: 0.8rem; color: var(--muted); }
+  .big-quote { border-left: 4px solid var(--red); padding: 2.5rem; background: #0e0e0e; margin: 4rem 0; font-family: 'Noto Serif KR'; font-size: 1.15rem; line-height: 1.9; color: #eee; }
+  .big-quote cite { display: block; margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); font-style: normal; }
 
-  .timeline { position: relative; padding-left: 3rem; border-left: 2px solid var(--red); }
-  .tl-item { margin-bottom: 3rem; }
-  .tl-year { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--red); }
-  .tl-event { font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .timeline { position: relative; padding-left: 3.5rem; border-left: 1px solid #333; }
+  .tl-item { position: relative; margin-bottom: 4rem; }
+  .tl-item::before { content: ''; position: absolute; left: -3.5rem; top: 8px; width: 10px; height: 10px; background: var(--red); transform: translateX(-5px); border-radius: 50%; }
+  .tl-year { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--red); }
+  .tl-event { font-weight: 700; font-size: 1.2rem; margin-bottom: 0.8rem; }
   .tl-desc { color: var(--muted); font-size: 0.95rem; }
 
-  .factor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .factor-card { background: var(--card); padding: 2.5rem; border-top: 3px solid var(--red); }
-  .factor-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
-  .factor-body { color: var(--muted); font-size: 0.9rem; }
+  .factor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .factor-card { background: var(--card); padding: 3rem; border-left: 4px solid var(--red); }
+  .factor-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.2rem; }
+  .factor-body { color: var(--muted); font-size: 0.95rem; }
 
-  .genre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-  .genre-card { border: 1px solid var(--border); background: var(--card); overflow: hidden; }
-  .genre-head { background: #222; padding: 1rem 1.5rem; font-family: 'Bebas Neue'; color: var(--red); font-size: 1.5rem; }
-  .genre-body { padding: 1.5rem; }
-  .genre-works { color: var(--red); font-weight: 700; margin-bottom: 0.5rem; font-size: 0.9rem; }
-  .genre-tag { display: inline-block; font-size: 0.7rem; border: 1px solid #333; padding: 2px 8px; margin: 4px 4px 0 0; color: var(--muted); }
+  .genre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+  .genre-card { background: var(--card); border: 1px solid #222; }
+  .genre-head { background: #1a1a1a; padding: 1.2rem 2rem; font-family: 'Bebas Neue'; color: var(--red); font-size: 1.6rem; }
+  .genre-body { padding: 2rem; }
+  .genre-works { color: var(--red); font-weight: 700; margin-bottom: 0.8rem; font-size: 0.9rem; }
+  .genre-tag { display: inline-block; font-size: 0.75rem; background: #222; padding: 3px 10px; margin: 0 5px 5px 0; color: #aaa; }
 
-  .eco-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-  .eco-table th { background: #111; color: var(--red); padding: 1rem; text-align: left; border-bottom: 2px solid var(--red); font-family: 'Bebas Neue'; }
-  .eco-table td { padding: 1rem; border-bottom: 1px solid #222; font-size: 0.9rem; }
+  .table-wrapper { overflow-x: auto; margin-top: 2rem; }
+  .eco-table { width: 100%; border-collapse: collapse; min-width: 800px; }
+  .eco-table th { background: #111; color: var(--red); padding: 1.2rem; text-align: left; border-bottom: 2px solid var(--red); font-family: 'Bebas Neue'; }
+  .eco-table td { padding: 1.2rem; border-bottom: 1px solid #222; font-size: 0.95rem; }
 
-  .econ-row { margin-bottom: 2rem; }
-  .econ-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
-  .econ-val { color: var(--red); font-family: 'Bebas Neue'; font-size: 1.2rem; }
-  .bar-track { height: 6px; background: #222; border-radius: 3px; }
-  .bar-fill { height: 100%; background: var(--red); border-radius: 3px; }
+  .econ-row { margin-bottom: 2.5rem; }
+  .econ-label { display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .econ-val { color: var(--red); font-family: 'Bebas Neue'; font-size: 1.3rem; }
+  .bar-track { height: 8px; background: #222; border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--red); }
 
-  .future-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-  .future-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; }
-  .future-year { font-family: 'Bebas Neue'; font-size: 2rem; color: rgba(229, 9, 20, 0.3); }
+  .future-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .future-card { background: var(--card); border: 1px solid #222; padding: 2.5rem; border-top: 1px solid var(--red); }
+  .future-year { font-family: 'Bebas Neue'; font-size: 2.5rem; color: rgba(229, 9, 20, 0.4); margin-bottom: 1rem; }
+  .future-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.2rem; }
 
-  .conc-block { border-left: 3px solid var(--red); padding-left: 2rem; }
-  .conc-block li { margin-bottom: 1rem; color: var(--muted); list-style: none; }
-  .conc-block li::before { content: '→ '; color: var(--red); }
+  .conc-box { background: #0e0e0e; border: 1px solid #222; padding: 3rem; }
+  .conc-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+  .conc-title::before { content: ''; width: 4px; height: 20px; background: var(--red); }
+  .conc-list { list-style: none; }
+  .conc-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: #ccc; font-size: 1rem; }
+  .conc-list li::before { content: '✓'; position: absolute; left: 0; color: var(--red); font-weight: 900; }
 
-  footer { padding: 3rem; border-top: 1px solid #222; display: flex; justify-content: space-between; font-family: 'Bebas Neue'; color: var(--red); }
-  
-  .hl { color: var(--white); font-weight: 700; border-bottom: 1px solid var(--red); }
+  footer { padding: 4rem 3rem; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: center; background: #000; }
+  .footer-logo { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--red); }
+
+  @media (max-width: 768px) { nav { padding: 0 1.5rem; } .nav-menu { display: none; } }
 </style>
 </head>
 <body>
@@ -135,7 +141,6 @@
   <div class="container">
     <div class="section-label">01 — THE K-WAVE IMPACT</div>
     <h2 class="section-title">한국 콘텐츠의 <em>현재 위상</em></h2>
-    <p class="section-desc">넷플릭스 기준 비영어권 콘텐츠 1위, 칸·아카데미 석권, 全 세계 OTT 점령. 한류는 더 이상 아시아 지역 현상이 아닌 전 지구적 문화 권력으로 진화했다.</p>
     <div class="stat-grid">
       <div class="stat-card"><div class="stat-num">$13.4B</div><div class="stat-label">2024년 한국 콘텐츠 글로벌 수출 총액</div></div>
       <div class="stat-card"><div class="stat-num">#1</div><div class="stat-label">넷플릭스 비영어권 시리즈 시청 시간</div></div>
@@ -161,90 +166,4 @@
       <div class="tl-item"><div class="tl-year">2005</div><div class="tl-event">대장금 아시아·중동·아프리카 80개국 수출</div><div class="tl-desc">사극+음식+여성 서사의 결합으로 이슬람권 등 비아시아 시장 최초 돌파.</div></div>
       <div class="tl-item"><div class="tl-year">2012</div><div class="tl-event">싸이 강남스타일 유튜브 최초 10억 뷰</div><div class="tl-desc">K-팝과 연계되어 한류가 디지털 플랫폼 주도 글로벌 현상으로 전환하는 분기점.</div></div>
       <div class="tl-item"><div class="tl-year">2019</div><div class="tl-event">기생충 칸 황금종려상 + 아카데미 작품상</div><div class="tl-desc">비영어권 영화 최초 아카데미 작품상. 'K-시네마'를 고급 예술로 세계 무대에 각인.</div></div>
-      <div class="tl-item"><div class="tl-year">2021</div><div class="tl-event">오징어 게임 넷플릭스 역대 최고 시청 기록</div><div class="tl-desc">출시 28일 만에 1억 1,100만 계정 시청. K-드라마가 서구권 메인스트림 대중문화로 완전 편입.</div></div>
-      <div class="tl-item"><div class="tl-year">2024</div><div class="tl-event">눈물의 여왕 넷플릭스 비영어권 드라마 역대 시청 1위</div><div class="tl-desc">K-로맨스의 부활. 전 세계 87개국 1위를 석권하며 K-드라마 르네상스 선언.</div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-event">K-콘텐츠 수출 $13.4B 돌파 — 반도체 이후 최대 문화 수출 품목</div><div class="tl-desc">AI 기술 접목 및 글로벌 공동제작 본격화. 한국 콘텐츠 산업의 제2 전성기.</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <div class="container">
-    <div class="section-label">03 — WHY KOREA?</div>
-    <h2 class="section-title">성공 요인 <em>분석</em></h2>
-    <div class="factor-grid">
-      <div class="factor-card"><div class="factor-title">탄탄한 서사 구조</div><div class="factor-body">미드처럼 시즌을 길게 늘이지 않는 완결형 단막 구성. 16부작 내외의 치밀한 기승전결이 몰입도를 극대화한다. 작가 중심주의 제작 시스템이 일관성을 보장.</div></div>
-      <div class="factor-card"><div class="factor-title">사회 비판적 메시지</div><div class="factor-body">빈부 격차(기생충), 계층 이동의 불가능성(오징어 게임), 젠더 불평등(마이 네임) — 한국 특수의 사회 문제가 보편적 인류 감정으로 번역된다.</div></div>
-      <div class="factor-card"><div class="factor-title">감정의 보편성</div><div class="factor-body">가족애, 첫사랑, 불의에 대한 분노, 생존 본능 — 문화 코드가 달라도 흔들리는 감정은 같다. 한국 콘텐츠는 이 '보편 감정 코드'를 가장 밀도 있게 압축한다.</div></div>
-      <div class="factor-card"><div class="factor-title">시각적 완성도</div><div class="factor-body">할리우드 대비 1/10 수준 제작비로 구현하는 영화적 질감. 미술·의상·조명의 한국적 미학과 디테일이 글로벌 시청자에게 '이국적 아름다움'으로 소비된다.</div></div>
-      <div class="factor-card"><div class="factor-title">플랫폼 전략의 선점</div><div class="factor-body">넷플릭스가 아시아 시장 공략을 위해 한국 콘텐츠를 전략 파트너로 선택. OTT 글로벌 배급망과의 조기 협업이 동시 전 세계 개봉을 가능케 했다.</div></div>
-      <div class="factor-card"><div class="factor-title">SNS & 팬덤 문화</div><div class="factor-body">K-팝 팬덤에서 학습된 조직적 바이럴 마케팅이 드라마·영화로 이전. 자발적 자막 번역, 밈 생산, 트위터 트렌드 장악 등 팬 주도 글로벌 확산 생태계.</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="genres" style="background:var(--deep)">
-  <div class="container">
-    <div class="section-label">04 — GENRES</div>
-    <h2 class="section-title">주요 장르 & <em>대표작</em></h2>
-    <div class="genre-grid">
-      <div class="genre-card">
-        <div class="genre-head">K-스릴러 / 사회극</div>
-        <div class="genre-body">
-          <div class="genre-works">기생충, 오징어 게임, 수리남</div>
-          <div class="genre-desc">한국 특유의 계급·자본 비판이 서스펜스와 결합. 고통받는 하층민과 타락한 상류층의 대비가 공명한다. 폭력성과 유머의 불편한 동거가 트레이드마크.</div>
-          <span class="genre-tag">사회비판</span><span class="genre-tag">계급갈등</span><span class="genre-tag">반전</span>
-        </div>
-      </div>
-      <div class="genre-card">
-        <div class="genre-head">K-로맨스</div>
-        <div class="genre-body">
-          <div class="genre-works">눈물의 여왕, 겨울연가, 도깨비</div>
-          <div class="genre-desc">재벌-평민의 신분차 로맨스부터 초자연적 운명론까지. 과도한 감정 표현이 해외 시청자에게 '순도 높은 감정'으로 수용된다.</div>
-          <span class="genre-tag">운명적 사랑</span><span class="genre-tag">재벌물</span><span class="genre-tag">감성</span>
-        </div>
-      </div>
-      <div class="genre-card">
-        <div class="genre-head">K-좀비 / 판타지</div>
-        <div class="genre-body">
-          <div class="genre-works">킹덤, 지금 우리 학교는, 스위트홈</div>
-          <div class="genre-desc">조선시대 역사극과 좀비 아포칼립스를 결합한 킹덤은 장르 혼종의 교과서. K-좀비는 빠르고 스마트하며 철저히 사회 메타포로 기능한다.</div>
-          <span class="genre-tag">역사 배경</span><span class="genre-tag">서바이벌</span>
-        </div>
-      </div>
-      <div class="genre-card">
-        <div class="genre-head">K-가족극 / 휴먼드라마</div>
-        <div class="genre-body">
-          <div class="genre-works">나의 아저씨, 응답하라 시리즈, 이상한 변호사 우영우</div>
-          <div class="genre-desc">성장, 치유, 가족 유대를 다루는 장르. 뚜렷한 서사 압박 없이도 감정적 몰입을 이끄는 '느린 드라마'의 정수.</div>
-          <span class="genre-tag">치유</span><span class="genre-tag">성장</span><span class="genre-tag">공동체</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="industry">
-  <div class="container">
-    <div class="section-label">05 — PRODUCTION ECOSYSTEM</div>
-    <h2 class="section-title">산업 구조 & <em>생태계</em></h2>
-    <table class="eco-table">
-      <thead><tr><th>구분</th><th>특징</th><th>대표 사례</th><th>규모</th></tr></thead>
-      <tbody>
-        <tr><td><strong>웹툰 → 드라마 IP</strong></td><td>네이버/카카오 플랫폼에서 검증된 IP를 드라마화. 팬덤 기반 안정적 시청률 보장</td><td>이태원 클라쓰, 지옥, 스위트홈</td><td>연간 70편+ 웹툰 원작</td></tr>
-        <tr><td><strong>넷플릭스 공동제작</strong></td><td>넷플릭스가 제작비 100% 투자, 한국 제작사가 크리에이티브 전권 보유</td><td>오징어 게임, 킹덤, 지금 우리 학교는</td><td>편당 $10~30M 투자</td></tr>
-        <tr><td><strong>디즈니+/애플TV 진입</strong></td><td>넷플릭스 독점 깨지며 플랫폼 경쟁 심화. 제작비·작가 조건 상향</td><td>무빙, 닥터슬럼프</td><td>편당 $50M+ 블록버스터급</td></tr>
-        <tr><td><strong>스튜디오 시스템화</strong></td><td>CJ ENM, HYBE, 스튜디오드래곤 등 대형 스튜디오의 IP 포트폴리오 전략</td><td>스튜디오드래곤(연 20편+)</td><td>KOSPI 시총 급성장</td></tr>
-        <tr><td><strong>글로벌 공동제작</strong></td><td>미국·영국·일본 방송사와 포맷 공동개발. K-드라마 DNA를 현지화</td><td>오징어 게임 미국판, 굿닥터 미국판</td><td>리메이크 60개국+ 수출</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section id="economy" style="background:var(--deep)">
-  <div class="container">
-    <div class="section-label">06 — ECONOMIC POWER</div>
-    <h2 class="section-title">경제적 <em>파급 효과</em></h2>
-    <div class="econ-row"><div class="econ-label"><span>K-뷰티 (화장품·스킨케어 수출)</span><span class="econ-val">$10.2B (2024)</span></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
-    <div class="econ-row"><div class="econ-label"><span>K-푸드 (라면·김치·HMR 수출)</span><span class="econ-val">$13.7B (2024)</span></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
-    <div class="econ-row"><div class="econ-label"><span>한류 유발 외국인 관광 수입</span><span class="econ-val">$24.8B (2024)</span></div><div class="bar-track
+      <div class="tl-item"><div class="tl-
